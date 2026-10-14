@@ -1,8 +1,8 @@
-# Governance Testing Standard (GTS) — evidence-driven release contract
+# Governed Transformation Standard (GTS) — evidence-driven release profile
 
 **Status:** Draft v0.1. Not a certification, third-party endorsement, or claim that Frequency has passed.
 
-GTS is a technology-neutral minimum evidence contract for consequential software changes. Its release decisions are `PASS`, `HOLD`, and `FAIL`. Unknown, missing, skipped, not-applicable without justification, and unexecuted checks **never** become a pass.
+This draft GTS release profile is a technology-neutral minimum evidence contract for consequential software changes. Its release decisions are `PASS`, `HOLD`, and `FAIL`. Unknown, missing, skipped, not-applicable without justification, and unexecuted checks **never** become a pass.
 
 ## Required release evidence
 
@@ -32,6 +32,6 @@ Each PASS needs a concrete evidence locator, a named verifier, and a scope. A re
 
 Run `python3 scripts/verify_manifest.py path/to/manifest.json`; exit 0 for manifest-completeness PASS, exit 1 for HOLD/FAIL or invalid inputs. Run `python3 -m unittest discover -s tests -v` to exercise positive, missing-gate, denied, and inconsistent-decision cases. Neither operation proves live runtime enforcement.
 
-**Implementation scope:** This public specification and its checker are separate from the proprietary Frequency runtime. Frequency must explicitly adopt this contract and generate real evidence before claiming conformance.
+**Implementation scope:** This public release profile and checker are separate from the proprietary Frequency runtime. It publishes no private scheduling, scoring, causal algorithms, enforcement internals, optimization, private benchmark corpus, or proprietary adapters. Frequency must explicitly adopt this contract and generate real evidence before claiming conformance.
 
 Copyright © 2026 Valentyn Rukhaylo / Altru.dev. Apache-2.0; see LICENSE.
