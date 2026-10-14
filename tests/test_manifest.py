@@ -36,7 +36,9 @@ class ReleaseGateTests(unittest.TestCase):
                 item = good()
                 item["checks"]["wiring"]["status"] = status
                 item["decision"] = decision
-                self.assertEqual(gts.assess(item)[0], decision)
+                verdict, problems = gts.assess(item)
+                self.assertEqual(verdict, decision)
+                self.assertFalse(any("disagrees with computed" in p for p in problems), problems)
 
     def test_missing_evidence_never_passes(self):
         for key in ("evidence", "scope", "verifier"):
